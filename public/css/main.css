@@ -1,0 +1,132 @@
+/*--------------------------------------
+         IMPORT HELPERS
+---------------------------------------*/
+/*--------------------------------------
+         Colors
+---------------------------------------*/
+/**
+ * @copyright   2010-2016, The Titon Project
+ * @license     http://opensource.org/licenses/BSD-3-Clause
+ * @link        http://titon.io
+ */
+/**
+ * Calculate the width of an individual flex block. Take into account max widths and gutters.
+ *
+ * @param int $n - The current column
+ * @param int $columns - The total number of columns
+ * @param int [$width] - The max width of the flex container
+ * @param int [$gutter] - The spacing in between each block
+ */
+/**
+ * Styles for the region that contains blocks.
+ *
+ * @param int [$width] - The max width of the flex container
+ */
+/**
+ * Align the blocks within a region horizontally or vertically.
+ *
+ * @param string [$align]
+ */
+/**
+ * Set the orientation of blocks. Either display vertically or horizontally.
+ *
+ * @param string [$orientation]
+ */
+/**
+ * Set the wrapping of blocks within a region.
+ *
+ * @param bool [$wrap]
+ */
+/**
+ * Set the width, grow, and shrink settings for a block.
+ *
+ * @param int|string [$width] - Default width basis
+ * @param int [$grow]
+ * @param int [$shrink]
+ */
+/**
+ * Override the blocks alignment set by the parent.
+ *
+ * @param string [$align]
+ */
+/**
+ * Set the order of a block. Defaults to 100 so that custom blocks can be set higher.
+ *
+ * @param int [$order]
+ */
+/**
+ * Set a block to grow by default.
+ *
+ * @param int|string [$width]
+ */
+/**
+ * Set a block to shrink by default.
+ *
+ * @param int|string [$width]
+ */
+/*--------------------------------------
+         FONTS
+---------------------------------------*/
+/*--------------------------------------
+         MIXINS
+---------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*--------------------------------------
+         Z-Index Layers
+---------------------------------------*/
+/*--------------------------------------
+         IMPORT LAYOUT
+---------------------------------------*/
+/*--------------------------------------
+         BASE
+---------------------------------------*/
+#main {
+  font-family: 'Varela Round', sans-serif;
+  line-height: normal;
+}

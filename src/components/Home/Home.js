@@ -102,8 +102,19 @@ export default class Home extends Component {
               Be notified when our app launches in your region
             </div>
             <form style={styles.form} id="myform" name="myform">
-              <input style={styles.email} id="email" type="email" name="email" placeholder="Email"/>
-              <input style={styles.submit} type="submit" onSubmit={this.onSubmit} value="Save" />
+              <input
+                style={styles.email}
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+              <input
+                style={styles.submit}
+                type="submit"
+                onSubmit={this.onSubmit}
+                value="Save"
+              />
             </form>
           </div>
         </div>

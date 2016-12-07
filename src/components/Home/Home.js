@@ -63,8 +63,12 @@ const styles = reactCSS({
 });
 
 export default class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      submitted: false,
+      email: ''
+    };
     this.onSubmit = this.onSubmit.bind(this);
   }
 

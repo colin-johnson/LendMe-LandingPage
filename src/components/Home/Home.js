@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import reactCSS from 'reactcss';
-import fetch from 'whatwg-fetch';
+import { connect } from 'react-redux';
 
 const styles = reactCSS({
-  'default': {
+  default: {
     main: {
       height: '100vh',
       width: '100vw',
-      backgroundImage: 'url("./public/images/landing-bg.jpg")',
+      backgroundImage: 'url("/images/landing-bg.jpg")',
       backgroundSize: 'cover',
       fontSize: '18px',
       color: '#3b3b3b'
@@ -51,34 +51,39 @@ const styles = reactCSS({
     },
     phones: {
       position: 'absolute',
-      backgroundImage: 'url("./public/images/iphones-3.png")',
+      backgroundImage: 'url("/images/iphones-3.png")',
       backgroundSize: 'cover',
       width: '60vw',
       height: '90vh',
       right: '0',
       bottom: '0',
-      zIndex: '0'
-    }
-  }
+      zIndex: '0',
+    },
+  },
 });
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       submitted: false,
-      email: ''
+      email: '',
+      success: false
     };
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit() {
+  handleFormSubmit(event) {
+    event.preventDefault();
     fetch('/api/submitemail', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         email: this.state.email
       })
-    }).then(() => this.setState({ submitted: true }))
+    })
+      .then(() => this.setState({ success: true }))
   }
 
   render() {
@@ -101,20 +106,23 @@ export default class Home extends Component {
             <div style={styles.cta}>
               Be notified when our app launches in your region
             </div>
-            <form style={styles.form} id="myform" name="myform">
+
+
+            <form
+              style={styles.form}
+              id="myform"
+              name="myform"
+              onSubmit={this.handleFormSubmit.bind(this)}
+            >
               <input
-                style={styles.email}
-                id="email"
-                type="email"
                 name="email"
-                placeholder="Email"
+                type="email"
+                id="email"
+                style={styles.email}
+                onChange={e => this.setState({ email: e.target.value })}
+                value={this.state.email}
               />
-              <input
-                style={styles.submit}
-                type="submit"
-                onSubmit={this.onSubmit}
-                value="Save"
-              />
+              <button style={styles.submit} action="submit" className="button">Save changes</button>
             </form>
           </div>
         </div>
@@ -124,3 +132,6 @@ export default class Home extends Component {
     );
   }
 }
+
+
+export default Home;

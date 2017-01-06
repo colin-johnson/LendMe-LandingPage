@@ -1,10 +1,10 @@
 {
-  "name": "colin-johnson-portfolio",
+  "name": "lend-me-landing-page",
   "version": "1.0.0",
-  "description": "Portolfio site for Colin R Johnson",
+  "description": "Lend Me landing page for email sign up",
   "author": "Colin Johnson",
   "license": "MIT",
-  "homepage": "https://colinrjohnson.com",
+  "homepage": "https://lendme.io",
   "keywords": [
     "react",
     "reactjs",
@@ -16,7 +16,7 @@
     "portfolio"
   ],
   "scripts": {
-    "start": "node server.js",
+    "start": "forever start ./expressServer.js",
     "lint": "eslint src",
     "dev": "webpack -d --watch",
     "build": "webpack -p",
@@ -31,8 +31,11 @@
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
     "css-loader": "^0.25.0",
-    "eslint": "^1.10.3",
-    "eslint-plugin-react": "^3.6.2",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "mongoose": "^4.7.1",
     "node-sass": "^3.10.0",
@@ -44,15 +47,21 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "forever": "^0.15.3",
     "inline-style-prefixer": "^2.0.4",
+    "lodash": "^4.17.2",
     "mongoose": "^4.7.1",
-    "react": "^0.14.6",
+    "react": "^15.4.1",
     "react-bootstrap": "^0.30.3",
-    "react-dom": "^0.14.6",
+    "react-bounds": "^0.3.1",
+    "react-dom": "^15.4.0",
     "react-gsap-enhancer": "^0.3.0",
+    "react-redux": "^5.0.1",
     "react-router": "^2.8.0",
-    "reactcss": "^1.1.1"
+    "reactcss": "^1.1.1",
+    "redux": "^3.6.0"
   }
 }

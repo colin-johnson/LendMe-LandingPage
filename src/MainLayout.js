@@ -4,7 +4,7 @@
 import React, { PropTypes } from 'react';
 
 
-const MainLayout = (props) => (
+const MainLayout = props => (
   <div>
     {props.children}
   </div>
